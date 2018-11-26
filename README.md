@@ -1,11 +1,15 @@
 # SecTools
 
-STEGO\n
-estenografia_crypt.py -> Cifra texto/fichero en una imagen PNG.\n
-estenografia_decrypt.py -> Extrae text/fichero de imagen PNG.\n
+STEGO
 
-CRYPTO\n
-hash_formula.py -> Intenta determinar que elementos de una lista se han utilizado en la generacion de un hash md5/sha1 y su orden.\n
+estenografia_crypt.py -> Cifra texto/fichero en una imagen PNG.
 
-FINGERPRINTING\n
-subDomainFinder.py -> Buscqueda de subdominios.\n
+estenografia_decrypt.py -> Extrae text/fichero de imagen PNG.
+
+CRYPTO
+
+hash_formula.py -> Intenta determinar que elementos de una lista se han utilizado en la generacion de un hash md5/sha1 y su orden.
+
+FINGERPRINTING
+
+subDomainFinder.py -> Buscqueda de subdominios.
