@@ -12,4 +12,8 @@ hash_formula.py -> Intenta determinar que elementos de una lista se han utilizad
 
 FINGERPRINTING
 
-subDomainFinder.py -> Buscqueda de subdominios.
+subDomainFinder.py -> Busqueda de subdominios.
+
+MALWARE ANALYSIS
+
+dll_info.py -> Obtencion de información sobre una DLL, en base al nombre intenta devolver descripcion y opcionalmente lista de funciones exportadas.
