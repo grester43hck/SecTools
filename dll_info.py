@@ -31,11 +31,11 @@ def w10dll_nirsoft_net(dll, func=False):
 		func_list=""
 	return [desc, func_list]
 def process_library_com(dll):
-	dll=dll.lower()
-	aux = req("https://www.google.com/search?q="+dll+"+www.processlibrary.com")
-	aux = aux.split("https://www.processlibrary.com")[1].split("&amp;")[0]
-	content = req("https://www.processlibrary.com"+aux)
 	try:
+		dll=dll.lower()
+		aux = req("https://www.google.com/search?q="+dll+"+www.processlibrary.com")
+		aux = aux.split("https://www.processlibrary.com")[1].split("&amp;")[0]
+		content = req("https://www.processlibrary.com"+aux)
 		desc = [content.split('class="seven columns"')[1].split("<p>")[2].split("</p>")[0]]
 	except:
 		desc=[]
