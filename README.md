@@ -20,3 +20,6 @@ MALWARE ANALYSIS
 
 dll_info.py -> Obtencion de información sobre una DLL, en base al nombre intenta devolver descripcion y opcionalmente lista de funciones exportadas.
 
+NETWORK PACKETS
+
+packet_viewer.py -> Visualizador de paquetes IP y su contenido en hexadecimal. Puede filtrar por IP e intentar mostrar en texto plano el contenido si no esta encriptado.
