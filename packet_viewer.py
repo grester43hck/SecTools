@@ -23,11 +23,11 @@ ni.ifaddresses(INTERFACE)
 LOCAL_IP = ni.ifaddresses('eth0')[ni.AF_INET][0]['addr']
 
 ##PRINT CONFIG
-print "--- CONFIG ---"
-print "[+] INTERFACE: \t"+str(INTERFACE) + "("+LOCAL_IP+")"
-print "[+] ALL_IP: \t\t"+str(ALL_IP)
-print "[+] IP FILTER: \t"+(str(ip_whitelist) if len(ip_whitelist)>0 else "ALL")
-print "[+] DECRYPT: \t\t"+str(DECRYPT)
+print ("--- CONFIG ---")
+print ("[+] INTERFACE: \t"+str(INTERFACE) + "("+LOCAL_IP+")")
+print ("[+] ALL_IP: \t\t"+str(ALL_IP))
+print ("[+] IP FILTER: \t"+(str(ip_whitelist) if len(ip_whitelist)>0 else "ALL"))
+print ("[+] DECRYPT: \t\t"+str(DECRYPT))
 
 ##CLASSES AND METHODS
 class bcolors:
