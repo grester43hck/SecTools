@@ -43,19 +43,19 @@ def expand(x):
 
 def pkt_callback(pkt):
 	if(pkt[IP].dst in ip_whitelist or (ALL_IP and pkt[IP].src == LOCAL_IP)):
-	try:
-		print( bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]"+pkt[Raw].load.encode("hex") + (" ---- \n\r"+bcolors.ENDC+pkt[Raw].load.encode("latin1") if DECRYPT else "")) 
-	except UnicodeDecodeError:
-		print( bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]"+pkt[Raw].load.encode("hex") + " ---- "+bcolors.ENDC+"CRYPTED") 
-	except IndexError:
-		if(SHOW_ALL): print(bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]" + " empty")
+		try:
+			print( bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]"+pkt[Raw].load.encode("hex") + (" ---- \n\r"+bcolors.ENDC+pkt[Raw].load.encode("latin1") if DECRYPT else "")) 
+		except UnicodeDecodeError:
+			print( bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]"+pkt[Raw].load.encode("hex") + " ---- "+bcolors.ENDC+"CRYPTED") 
+		except IndexError:
+			if(SHOW_ALL): print(bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]" + " empty")
 	if(pkt[IP].src in ip_whitelist or (ALL_IP and pkt[IP].dst == LOCAL_IP)):
-	try:
-		print( bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]"+pkt[Raw].load.encode("hex") + " ---- \n\r"+bcolors.ENDC+pkt[Raw].load.encode("latin1")) 
-	except UnicodeDecodeError:
-		print( bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]"+pkt[Raw].load.encode("hex") + " ---- "+bcolors.ENDC+"CRYPTED") 
-	except IndexError:
-		if(SHOW_ALL): print(bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]" + " empty")
+		try:
+			print( bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]"+pkt[Raw].load.encode("hex") + " ---- \n\r"+bcolors.ENDC+pkt[Raw].load.encode("latin1")) 
+		except UnicodeDecodeError:
+			print( bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]"+pkt[Raw].load.encode("hex") + " ---- "+bcolors.ENDC+"CRYPTED") 
+		except IndexError:
+			if(SHOW_ALL): print(bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]" + " empty")
 
 ##MAIN CODE
 sniff(iface="eth0", prn=pkt_callback, filter="tcp", store=0)
