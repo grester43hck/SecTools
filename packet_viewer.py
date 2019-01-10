@@ -31,25 +31,25 @@ print ("[+] DECRYPT: \t\t"+str(DECRYPT))
 
 ##CLASSES AND METHODS
 class bcolors:
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    ENDC = '\033[0m'
+	OKBLUE = '\033[94m'
+	OKGREEN = '\033[92m'
+	ENDC = '\033[0m'
 
 def expand(x):
-    yield x
-    while x.payload:
-        x = x.payload
-        yield x
+	yield x
+	while x.payload:
+		x = x.payload
+		yield x
 
 def pkt_callback(pkt):
-    if(pkt[IP].dst in ip_whitelist or (ALL_IP and pkt[IP].src == LOCAL_IP)):
+	if(pkt[IP].dst in ip_whitelist or (ALL_IP and pkt[IP].src == LOCAL_IP)):
 	try:
 		print( bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]"+pkt[Raw].load.encode("hex") + (" ---- \n\r"+bcolors.ENDC+pkt[Raw].load.encode("latin1") if DECRYPT else "")) 
 	except UnicodeDecodeError:
 		print( bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]"+pkt[Raw].load.encode("hex") + " ---- "+bcolors.ENDC+"CRYPTED") 
 	except IndexError:
 		if(SHOW_ALL): print(bcolors.OKGREEN +"["+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"-->"+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"]" + " empty")
-    if(pkt[IP].src in ip_whitelist or (ALL_IP and pkt[IP].dst == LOCAL_IP)):
+	if(pkt[IP].src in ip_whitelist or (ALL_IP and pkt[IP].dst == LOCAL_IP)):
 	try:
 		print( bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]"+pkt[Raw].load.encode("hex") + " ---- \n\r"+bcolors.ENDC+pkt[Raw].load.encode("latin1")) 
 	except UnicodeDecodeError:
