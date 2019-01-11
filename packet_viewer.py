@@ -19,8 +19,9 @@ if(args.ip!=None):
 DECRYPT = args.decrypt
 SHOW_ALL = args.all
 INTERFACE = args.interface
+print(INTERFACE)
 ni.ifaddresses(INTERFACE)
-LOCAL_IP = ni.ifaddresses('eth0')[ni.AF_INET][0]['addr']
+LOCAL_IP = ni.ifaddresses(INTERFACE)[ni.AF_INET][0]['addr']
 
 ##PRINT CONFIG
 print ("--- CONFIG ---")
@@ -58,4 +59,4 @@ def pkt_callback(pkt):
 			if(SHOW_ALL): print(bcolors.OKBLUE +"["+str(pkt[IP].dst)+":"+str(pkt[IP].dport)+"<--"+str(pkt[IP].src)+":"+str(pkt[IP].sport)+"]" + " empty")
 
 ##MAIN CODE
-sniff(iface="eth0", prn=pkt_callback, filter="tcp", store=0)
+sniff(iface="Realtek PCIe FE Family Controller", prn=pkt_callback, filter="tcp", store=0)
