@@ -10,6 +10,8 @@ CRYPTO
 
 hash_formula.py -> Intenta determinar que elementos de una lista se han utilizado en la generacion de un hash md5/sha1 y su orden.
 
+PyObfuscate.py -> Ofuscador de codigo Python. Cifra en base64 y opcionalmente hace XOR de el codigo.
+
 FINGERPRINTING
 
 subDomainFinder.py -> Busqueda de subdominios.
