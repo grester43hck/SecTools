@@ -27,3 +27,6 @@ NETWORK PACKETS
 packet_viewer.py -> Visualizador de paquetes IP y su contenido en hexadecimal. Puede filtrar por IP e intentar mostrar en texto plano el contenido si no esta encriptado.
 
 traffic_analyzer.py -> Analizador de protocolos de red propietario/cadenas hex
+
+##OSINT
+GWar -> Framework para investigaciones OSINT
