@@ -13,7 +13,7 @@
 ## FINGERPRINTING
 
 - subDomainFinder.py -> Busqueda de subdominios.
-- rabbit_searcher.py -> Enumeracion de canales de rabbitMQ por diccionario
+- rabbit_searcher.py -> Enumeracion de canales de rabbitMQ por diccionario.
 
 ## MALWARE ANALYSIS
 
@@ -23,6 +23,11 @@
 
 - packet_viewer.py -> Visualizador de paquetes IP y su contenido en hexadecimal. Puede filtrar por IP e intentar mostrar en texto plano el contenido si no esta encriptado.
 - traffic_analyzer.py -> Analizador de protocolos de red propietario/cadenas hex
+
+## DICTIONARIES
+
+- personal_dict_generator -> Generador procedural de diccionarios especificos para un nombre de usuario.
+- leet_dict.py -> Convierte un diccionario a lenguaje leet.
 
 ## OSINT
 
